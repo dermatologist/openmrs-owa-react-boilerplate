@@ -1,5 +1,12 @@
 <img src="https://cloud.githubusercontent.com/assets/668093/12567089/0ac42774-c372-11e5-97eb-00baf0fccc37.jpg" alt="OpenMRS"/>
 
+# How to use this template (Remove this section)
+
+* change 'prescription' to 'your-app-name'
+* rename app/js/prescription.jsx to your-app-name.jsx
+* rename app/css/prescription.css to your-app-name.css
+
+
 # openmrs-owa-prescription
 This repository contains the Prescription OpenMRS Open Web App.
 
