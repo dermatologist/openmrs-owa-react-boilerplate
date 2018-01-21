@@ -1,16 +1,16 @@
 import React from 'react'
 import {Route} from 'react-router'
-import App from './components/App'
-import FindPatient from './components/FindPatient'
-import ShowPatientWrapper from './components/ShowPatient'
-import Help from './components/Help'
-import {loadCurrentPatient} from './actions'
+import App from '../components/App'
+import FindPatient from '../components/FindPatient'
+import ShowPatientWrapper from '../components/ShowPatient'
+import Help from '../components/Help'
+import {loadCurrentPatient} from '../actions/actions'
 
 export default (store) => {
 
     const fetchPatientOnEnter = (nextState, replace) => {
         store.dispatch(loadCurrentPatient(nextState.params.patientUuid));
-    }
+    };
 
     return (
             <Route path="/" component={App}>

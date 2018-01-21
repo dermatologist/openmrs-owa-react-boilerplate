@@ -1,4 +1,4 @@
-import patientService from './services/PatientService'
+import patientService from '../services/PatientService'
 
 /*
  * Action Types

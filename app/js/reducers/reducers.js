@@ -1,4 +1,4 @@
-import {DISCARD_CURRENT_PATIENT, LOAD_CURRENT_PATIENT, PATIENT_SEARCH} from './actions'
+import {DISCARD_CURRENT_PATIENT, LOAD_CURRENT_PATIENT, PATIENT_SEARCH} from '../actions/actions'
 
 export function currentPatient(state = {}, action) {
     switch (action.type) {

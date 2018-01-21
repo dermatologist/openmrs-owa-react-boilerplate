@@ -1,12 +1,12 @@
 import {connect} from 'react-redux'
 import PatientSearchHelper from './PatientSearchHelper'
-import {patientSearch} from '../actions'
+import {patientSearch} from '../actions/actions'
 
 const mapStateToProps = (state) => {
     return {
         patients: state.patientSearch
     }
-}
+};
 
 const mapDispatchToProps = (dispatch) => {
     return {
@@ -16,7 +16,7 @@ const mapDispatchToProps = (dispatch) => {
             }
         }
     }
-}
+};
 
 const PatientSearch = connect(
         mapStateToProps,
