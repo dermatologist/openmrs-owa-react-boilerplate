@@ -5,15 +5,15 @@
 import {autobind} from 'core-decorators';
 import crudService from "./crudService";
 
-export default class PatientService extends crudService {
+export default class patientService extends crudService {
 
     @autobind
-    findPatients(query) {
+    static findPatients(query) {
         return this.getResources('/openmrs/ws/rest/v1/patient?q=' + query);
     }
 
     @autobind
-    getPatient(uuid) {
+    static getPatient(uuid) {
         return this.getResource('/openmrs/ws/rest/v1/patient/', uuid);
     }
 

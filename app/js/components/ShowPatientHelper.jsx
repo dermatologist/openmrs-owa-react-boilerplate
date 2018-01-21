@@ -1,8 +1,6 @@
 import React from 'react';
 import moment from 'moment';
 
-import patientService from '../services/PatientService'
-
 export default class ShowPatientHelper extends React.Component {
 
     ageFrom(birthdate) {
