@@ -7,6 +7,7 @@
     "url": "https://github.com/dermatologist/openmrs-owa-prescription"
   },
   "dependencies": {
+    "axios": "^0.17.1",
     "moment": "^2.17.1",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
