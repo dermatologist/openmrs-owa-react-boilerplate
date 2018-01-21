@@ -17,7 +17,8 @@
     "redux-logger": "^3.0.6",
     "redux-promise-middleware": "^4.2.0",
     "redux-thunk": "^2.1.0",
-    "whatwg-fetch": "^2.0.1"
+    "whatwg-fetch": "^2.0.1",
+    "core-decorators": "latest"
   },
   "devDependencies": {
     "archiver": "^1.0.0",
