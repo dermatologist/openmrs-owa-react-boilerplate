@@ -4,7 +4,7 @@ import App from '../components/App'
 import FindPatient from '../components/FindPatient'
 import ShowPatientWrapper from '../components/ShowPatient'
 import Help from '../components/Help'
-import {loadCurrentPatient} from '../actions/actions'
+import {loadCurrentPatient} from '../actions/patientActions'
 
 export default (store) => {
 

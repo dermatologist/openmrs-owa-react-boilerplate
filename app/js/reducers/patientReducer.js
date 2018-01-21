@@ -1,6 +1,7 @@
-import {DISCARD_CURRENT_PATIENT, LOAD_CURRENT_PATIENT, PATIENT_SEARCH} from '../actions/actions'
+import {DISCARD_CURRENT_PATIENT, LOAD_CURRENT_PATIENT, PATIENT_SEARCH} from '../actions/patientActions'
+import {initialState} from "../constants/initialState";
 
-export function currentPatient(state = {}, action) {
+export function currentPatient(state = initialState, action) {
     switch (action.type) {
         case DISCARD_CURRENT_PATIENT:
             return {};

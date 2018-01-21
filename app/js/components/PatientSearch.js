@@ -1,6 +1,6 @@
 import {connect} from 'react-redux'
 import PatientSearchHelper from './PatientSearchHelper'
-import {patientSearch} from '../actions/actions'
+import {patientSearch} from '../actions/patientActions'
 
 const mapStateToProps = (state) => {
     return {

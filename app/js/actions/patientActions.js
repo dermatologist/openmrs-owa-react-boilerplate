@@ -5,7 +5,6 @@ import patientService from '../services/patientService'
  */
 export const LOAD_CURRENT_PATIENT = 'LOAD_CURRENT_PATIENT';
 export const DISCARD_CURRENT_PATIENT = 'DISCARD_CURRENT_PATIENT';
-
 export const PATIENT_SEARCH = 'PATIENT_SEARCH';
 
 /*
