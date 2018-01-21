@@ -3,9 +3,9 @@
  * Next I'll change things to use Redux instead.
  */
 import {autobind} from 'core-decorators';
-import crudApi from "./crudApi";
+import crudService from "./crudService";
 
-export default class PatientService extends crudApi {
+export default class PatientService extends crudService {
 
     @autobind
     findPatients(query) {

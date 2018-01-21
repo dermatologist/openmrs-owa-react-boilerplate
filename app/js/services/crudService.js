@@ -3,7 +3,7 @@ import {openmrsServer} from './crud';
 
 // All functions return a promise
 
-export default class crudApi {
+export default class crudService {
 
 
     getResources(url) {
