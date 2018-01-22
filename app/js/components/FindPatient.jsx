@@ -6,8 +6,6 @@ import {patientSearch} from "../actions/patientActions";
 
 @connect((store) => {
     return {
-        patient: store.patient.singleResource,
-        userFetched: store.patient.fetched,
         resources: store.patient.resources,
     };
 })
@@ -23,7 +21,7 @@ export default class FindPatient extends React.Component {
             <div>
                 <input type="text" placeholder="Search for a patient"
                        onChange={(evt) => this.doSearch(evt.target.value)}/>
-                <PatientList patients={this.props.patients} routeLink="/showPatient/:patientUuid"></PatientList>
+                <PatientList patients={this.props.resources} routeLink="/showPatient/:patientUuid"></PatientList>
             </div>
         );
     }
