@@ -4,5 +4,6 @@ export const initialState = {
     fetching: false,
     fetched: false,
     error: null,
+    singleResource: null,
 };
 

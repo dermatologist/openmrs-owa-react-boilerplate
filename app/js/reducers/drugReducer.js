@@ -1,32 +1,32 @@
-import {DISCARD_CURRENT_PATIENT, LOAD_CURRENT_PATIENT, PATIENT_SEARCH} from '../actions/patientActions'
+import {DISCARD_CURRENT_DRUG, DRUG_SEARCH, LOAD_CURRENT_DRUG} from '../actions/drugActions'
 import {initialState} from "../constants/initialState";
 
-export default function patientReducer(state = initialState, action) {
+export default function drugReducer(state = initialState, action) {
     switch (action.type) {
-        case DISCARD_CURRENT_PATIENT:
+        case DISCARD_CURRENT_DRUG:
             return {};
-        case LOAD_CURRENT_PATIENT + '_PENDING':
+        case LOAD_CURRENT_DRUG + '_PENDING':
             return {...state, fetching: true};
-        case LOAD_CURRENT_PATIENT + '_FULFILLED':
+        case LOAD_CURRENT_DRUG + '_FULFILLED':
             return {
                 ...state,
                 fetching: false,
                 fetched: true,
                 singleResource: action.payload,
             };
-        case LOAD_CURRENT_PATIENT + '_REJECTED':
+        case LOAD_CURRENT_DRUG + '_REJECTED':
             return {...state, fetching: false, error: action.payload};
 
-        case PATIENT_SEARCH + '_PENDING':
+        case DRUG_SEARCH + '_PENDING':
             return {...state, fetching: true};
-        case PATIENT_SEARCH + '_FULFILLED':
+        case DRUG_SEARCH + '_FULFILLED':
             return {
                 ...state,
                 fetching: false,
                 fetched: true,
                 resources: action.payload,
             };
-        case PATIENT_SEARCH + '_REJECTED':
+        case DRUG_SEARCH + '_REJECTED':
             return {...state, fetching: false, error: action.payload};
         default:
             return state;
