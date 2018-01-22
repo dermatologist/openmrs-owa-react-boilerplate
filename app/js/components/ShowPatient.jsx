@@ -9,7 +9,7 @@ import {autobind} from 'core-decorators';
         fetching: store.patient.fetching,
     };
 })
-export default class ShowPatientHelper extends React.Component {
+export default class ShowPatient extends React.Component {
 
     @autobind
     ageFrom(birthdate) {
