@@ -61,8 +61,7 @@ var getConfig = function () {
     } finally {
         return config;
     }
-    ;
-}
+};
 var config = getConfig();
 
 /** Minify for production */
@@ -164,7 +163,8 @@ var webpackConfig = {
             loader: 'babel-loader',
             exclude: /node_modules/,
             query: {
-                presets: ['es2015', 'react'],
+                presets: ['es2015', 'react', 'stage-2'],
+                plugins: ['react-html-attrs', 'transform-class-properties', 'transform-decorators-legacy'],
                 cacheDirectory: true
             }
         }, {
