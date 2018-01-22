@@ -4,10 +4,11 @@ import thunkMiddleware from 'redux-thunk';
 import logger from "redux-logger";
 import patientReducer from "../reducers/patientReducer"
 import drugReducer from "../reducers/drugReducer";
+import contextReducer from "../reducers/contextReducer";
 
 export default function () {
     const reducer = combineReducers({
-
+        context: contextReducer,
         patient: patientReducer,
         drug: drugReducer,
 
