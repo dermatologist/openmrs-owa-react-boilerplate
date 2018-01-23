@@ -16,9 +16,11 @@ export function discardCurrentPatient() {
 }
 
 export function loadCurrentPatient(patientUuid) {
-    return {type: LOAD_CURRENT_PATIENT, payload: patientService.getPatient(patientUuid)};
+    const service = new patientService();
+    return {type: LOAD_CURRENT_PATIENT, payload: service.getPatient(patientUuid)};
 }
 
 export function patientSearch(query) {
-    return {type: PATIENT_SEARCH, payload: patientService.findPatients(query)};
+    const service = new patientService();
+    return {type: PATIENT_SEARCH, payload: service.findPatients(query)};
 }
