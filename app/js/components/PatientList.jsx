@@ -2,7 +2,7 @@ import React from 'react';
 
 import {Link} from 'react-router'
 
-export default class PatientList extends React.Component {
+export class PatientList extends React.Component {
     renderLink(pt) {
         return (
                 <Link to={this.props.routeLink.replace(":patientUuid", pt.uuid)}>

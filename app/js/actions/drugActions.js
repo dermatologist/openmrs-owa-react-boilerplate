@@ -16,9 +16,11 @@ export function discardCurrentDrug() {
 }
 
 export function loadCurrentDrug(drugUuid) {
-    return {type: LOAD_CURRENT_DRUG, payload: drugService.getDrug(drugUuid)};
+    const service = new drugService();
+    return {type: LOAD_CURRENT_DRUG, payload: service.getDrug(drugUuid)};
 }
 
 export function drugSearch(query) {
-    return {type: DRUG_SEARCH, payload: drugService.findDrugs(query)};
+    const service = new drugService();
+    return {type: DRUG_SEARCH, payload: service.findDrugs(query)};
 }
