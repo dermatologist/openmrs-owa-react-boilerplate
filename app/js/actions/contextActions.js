@@ -11,5 +11,6 @@ export const LOAD_MANIFEST = 'LOAD_MANIFEST';
 
 
 export function loadManifest() {
-    return {type: LOAD_MANIFEST, payload: contextService.getManifest()};
+    const service = new contextService();
+    return {type: LOAD_MANIFEST, payload: service.getManifest()};
 }

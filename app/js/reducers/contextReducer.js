@@ -8,7 +8,7 @@ export default function contextReducer(state = initialContext, action) {
                 ...state,
                 fetching: false,
                 fetched: true,
-                manifest: action.payload,
+                manifest: action.payload.data,
             };
         case LOAD_MANIFEST + '_REJECTED':
             return {...state, fetching: false, error: action.payload};

@@ -9,7 +9,7 @@ import {loadManifest} from "../actions/contextActions";
         href: store.context.manifest.activities.openmrs.href,
         name: store.context.manifest.name,
         version: store.context.manifest.version,
-        description: store.context.manifest.version,
+        description: store.context.manifest.description,
         developer: store.context.manifest.developer.name,
         website: store.context.manifest.developer.url,
     };
@@ -29,7 +29,7 @@ export default class App extends React.Component {
                 </ul>
                 {this.props.children}
                 <h2>{this.props.name} | Version: {this.props.version}</h2>
-                <h3>Developer: {this.props.developer} | website: {this.props.developer}</h3>
+                <h3>Developer: {this.props.developer} | website: {this.props.website}</h3>
                 <h4>Description: {this.props.description}</h4>
                 <h5>OpenMRS root: {this.props.href}</h5>
 
