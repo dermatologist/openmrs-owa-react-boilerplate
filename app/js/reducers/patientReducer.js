@@ -12,7 +12,7 @@ export default function patientReducer(state = initialState, action) {
                 ...state,
                 fetching: false,
                 fetched: true,
-                singleResource: action.payload,
+                singleResource: action.payload.data,
             };
         case LOAD_CURRENT_PATIENT + '_REJECTED':
             return {...state, fetching: false, error: action.payload};
@@ -24,7 +24,7 @@ export default function patientReducer(state = initialState, action) {
                 ...state,
                 fetching: false,
                 fetched: true,
-                resources: action.payload,
+                resources: action.payload.data.results,
             };
         case PATIENT_SEARCH + '_REJECTED':
             return {...state, fetching: false, error: action.payload};
