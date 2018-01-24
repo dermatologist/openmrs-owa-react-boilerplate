@@ -31,7 +31,7 @@ export default class ShowPatient extends React.Component {
         if (this.props.fetching) {
             return <div>Loading...</div>
         }
-        else if (this.props.patient.person) {
+        else if (this.props.patient != null && this.props.patient.person) {
             let pt = this.props.patient;
             return (
                 <div>

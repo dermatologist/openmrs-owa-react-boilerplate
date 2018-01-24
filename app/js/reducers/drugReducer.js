@@ -12,7 +12,7 @@ export default function drugReducer(state = initialState, action) {
                 ...state,
                 fetching: false,
                 fetched: true,
-                singleResource: action.payload,
+                singleResource: action.payload.data,
             };
         case LOAD_CURRENT_DRUG + '_REJECTED':
             return {...state, fetching: false, error: action.payload};
@@ -24,7 +24,7 @@ export default function drugReducer(state = initialState, action) {
                 ...state,
                 fetching: false,
                 fetched: true,
-                resources: action.payload,
+                resources: action.payload.data.results,
             };
         case DRUG_SEARCH + '_REJECTED':
             return {...state, fetching: false, error: action.payload};
