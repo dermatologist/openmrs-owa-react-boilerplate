@@ -9,6 +9,9 @@ import RGL, {WidthProvider} from "react-grid-layout";
 import '../../../node_modules/react-grid-layout/css/styles.css';
 import '../../../node_modules/react-resizable/css/styles.css';
 import ShowPatient from "../components/ShowPatient";
+import FindDrug from "../components/FindDrug";
+import ShowDrug from "../components/ShowDrug";
+import '../styles/grid.css';
 
 const ReactGridLayout = WidthProvider(RGL);
 
@@ -29,9 +32,9 @@ export default class App extends React.Component {
 
     render() {
         return (
-            <div class="container">
-                <div class="row">
-                    <div class="span12">
+            <div className="container">
+                <div className="row">
+                    <div className="span12">
 
                 <h1>React Example</h1>
                 <ul role="nav">
@@ -43,17 +46,25 @@ export default class App extends React.Component {
                             <div key="title" data-grid={{x: 0, y: 0, w: 12, h: 2, static: true}}>
                                 <h2>{this.props.name} | Version: {this.props.version}</h2>
                             </div>
-                            <div key="patient" data-grid={{x: 0, y: 3, w: 12, h: 2, static: true}}>
-                        <FindPatient/>
-                    </div>
-                            <div key="drug" data-grid={{x: 0, y: 7, w: 12, h: 2, static: true}}>
+                            <div key="patient" data-grid={{x: 0, y: 3, w: 4, h: 2, static: true}}>
+                                <FindPatient/>
+                            </div>
+                            <div key="patient-show" className="results-panel"
+                                 data-grid={{x: 0, y: 7, w: 4, h: 2, minWidth: 2, minHeight: 3}}>
                                 <ShowPatient/>
-                    </div>
+                            </div>
+                            <div key="drug" data-grid={{x: 6, y: 3, w: 4, h: 2, static: true}}>
+                                <FindDrug/>
+                            </div>
+                            <div key="drug-show" className="results-panel"
+                                 data-grid={{x: 6, y: 7, w: 4, h: 2, minWidth: 2, minHeight: 3}}>
+                                <ShowDrug/>
+                            </div>
                             <div key="footer" data-grid={{x: 0, y: 10, w: 12, h: 2, static: true}}>
                                 <small>
-                                    Developer: {this.props.developer} | website: {this.props.website}
-                                    Description: {this.props.description}
-                                    OpenMRS root: {this.props.href}
+                                    <b>Developer:</b> {this.props.developer} | website: {this.props.website}<br/>
+                                    <b>Description:</b> {this.props.description}<br/>
+                                    <b>OpenMRS root:</b> {this.props.href}
                                 </small>
                     </div>
                 </ReactGridLayout>
