@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "1.0.0",
   "name": "prescription",
   "description": "Prescription App",
   "launch_path": "index.html",
@@ -7,8 +7,8 @@
     "48": "/img/omrs-button.png"
   },
   "developer": {
-    "name": "dermatologist",
-    "url": "https://github.com/dermatologist/openmrs-owa-prescription"
+    "name": "Bell Eapen",
+    "url": "http://nuchange.ca"
   },
   "default_locale": "en",
   "activities": {

@@ -4,11 +4,14 @@ import {Link} from 'react-router'
 import {connect} from "react-redux";
 import {loadManifest} from "../actions/contextActions";
 import FindPatient from "../components/FindPatient";
-import Help from "../components/Help";
 
-import RGL, { WidthProvider } from "react-grid-layout";
+import RGL, {WidthProvider} from "react-grid-layout";
 import '../../../node_modules/react-grid-layout/css/styles.css';
 import '../../../node_modules/react-resizable/css/styles.css';
+import ShowPatient from "../components/ShowPatient";
+import FindDrug from "../components/FindDrug";
+import ShowDrug from "../components/ShowDrug";
+import '../styles/grid.css';
 
 const ReactGridLayout = WidthProvider(RGL);
 
@@ -29,28 +32,44 @@ export default class App extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="container">
+                <div className="row">
+                    <div className="span12">
+
                 <h1>React Example</h1>
                 <ul role="nav">
                     <li><Link to="/findPatient" activeClassName="active">Find</Link></li>
                     <li><Link to="/help" activeClassName="active">Help</Link></li>
                 </ul>
-                <h2>{this.props.name} | Version: {this.props.version}</h2>
-                <h3>Developer: {this.props.developer} | website: {this.props.website}</h3>
-                <h4>Description: {this.props.description}</h4>
-                <h5>OpenMRS root: {this.props.href}</h5>
 
-                <ReactGridLayout className="layout" cols={12} rowHeight={30} width={1200}>
-                    <div key="a" data-grid={{x: 0, y: 0, w: 1, h: 2, static: true}}>
-                        <FindPatient/>
-                    </div>
-                    <div key="b" data-grid={{x: 1, y: 0, w: 3, h: 2, minW: 2, maxW: 4}}>
-                        {this.props.children}
-                    </div>
-                    <div key="c" data-grid={{x: 4, y: 0, w: 1, h: 2}}>
-                        <Help/>
+                        <ReactGridLayout className="layout" cols={12} rowHeight={30} width={1200}>
+                            <div key="title" data-grid={{x: 0, y: 0, w: 12, h: 2, static: true}}>
+                                <h2>{this.props.name} | Version: {this.props.version}</h2>
+                            </div>
+                            <div key="patient" data-grid={{x: 0, y: 3, w: 4, h: 2, static: true}}>
+                                <FindPatient/>
+                            </div>
+                            <div key="patient-show" className="results-panel"
+                                 data-grid={{x: 0, y: 7, w: 4, h: 2, minWidth: 2, minHeight: 3}}>
+                                <ShowPatient/>
+                            </div>
+                            <div key="drug" data-grid={{x: 6, y: 3, w: 4, h: 2, static: true}}>
+                                <FindDrug/>
+                            </div>
+                            <div key="drug-show" className="results-panel"
+                                 data-grid={{x: 6, y: 7, w: 4, h: 2, minWidth: 2, minHeight: 3}}>
+                                <ShowDrug/>
+                            </div>
+                            <div key="footer" data-grid={{x: 0, y: 10, w: 12, h: 2, static: true}}>
+                                <small>
+                                    <b>Developer:</b> {this.props.developer} | website: {this.props.website}<br/>
+                                    <b>Description:</b> {this.props.description}<br/>
+                                    <b>OpenMRS root:</b> {this.props.href}
+                                </small>
                     </div>
                 </ReactGridLayout>
+                    </div>
+                </div>
             </div>
         )
     }
