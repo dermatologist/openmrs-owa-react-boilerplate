@@ -1,10 +1,18 @@
 <img src="https://cloud.githubusercontent.com/assets/668093/12567089/0ac42774-c372-11e5-97eb-00baf0fccc37.jpg" alt="OpenMRS"/>
 
-# How to use this template (Remove this section)
+# openmrs-owa-react-boilerplate
+
+This is aboilerplate for creating React with Redux 
+Open Web Apps in OpenMRS. This is an extension of the react-redux boilerplate project
+started by [@djazayeri](https://github.com/djazayeri/openmrs-owa-reactexample)
+
+# Conceptual Diagram
+![OpenMRS OWA React](https://raw.github.com/dermatologist/openmrs-owa-react-boilerplate/master/docs/owa-react.png)
+
+# How to use this template 
 
 * change 'prescription' to 'your-app-name'
-* rename app/js/prescription.jsx to your-app-name.jsx
-* rename app/css/prescription.css to your-app-name.css
+* Update manifest.webapp
 
 
 # openmrs-owa-prescription
