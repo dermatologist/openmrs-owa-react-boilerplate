@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 
 import {Link} from 'react-router'
 import {connect} from "react-redux";
@@ -15,19 +15,25 @@ import '../styles/grid.css';
 
 const ReactGridLayout = WidthProvider(RGL);
 
-@connect((store) => {
-    return {
-        href: store.context.manifest.activities.openmrs.href,
-        name: store.context.manifest.name,
-        version: store.context.manifest.version,
-        description: store.context.manifest.description,
-        developer: store.context.manifest.developer.name,
-        website: store.context.manifest.developer.url,
+// App is a pure react component that is not aware of redux.
+// This is for easy testing.
+// The default export is a connect wrapper that injects dispatch
+// into the component. (See below)
+export class App extends React.Component {
+
+    static propTypes = {
+        href: PropTypes.string,
+        name: PropTypes.string,
+        version: PropTypes.string,
+        description: PropTypes.string,
+        developer: PropTypes.string,
+        website: PropTypes.string,
+        loadManifest: PropTypes.func,
     };
-})
-export default class App extends React.Component {
+
+
     componentWillMount() {
-        this.props.dispatch(loadManifest());
+        this.props.loadManifest();
     }
 
     render() {
@@ -74,3 +80,21 @@ export default class App extends React.Component {
         )
     }
 }
+
+// Everything below here is just glue that binds the pure component to a
+// certain part of the Redux store where it will read its props from.
+// state = redux store. (By convention, state is the variable name used.)
+const mapStateToProps = (state) => ({
+    href: state.context.manifest.activities.openmrs.href,
+    name: state.context.manifest.name,
+    version: state.context.manifest.version,
+    description: state.context.manifest.description,
+    developer: state.context.manifest.developer.name,
+    website: state.context.manifest.developer.url,
+});
+
+const mapDispatchToProps = {
+    loadManifest
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
