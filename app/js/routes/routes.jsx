@@ -1,8 +1,8 @@
 import React from 'react'
 import {Route} from 'react-router'
 import App from '../containers/App'
-import FindPatient from '../components/FindPatient'
-import ShowPatient from '../components/ShowPatient'
+import FindPatient from '../components/patient/FindPatient'
+import ShowPatient from '../components/patient/ShowPatient'
 import Help from '../components/Help'
 import {loadCurrentPatient} from '../actions/patientActions'
 

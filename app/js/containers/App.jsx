@@ -3,14 +3,14 @@ import React, {PropTypes} from 'react';
 import {Link} from 'react-router'
 import {connect} from "react-redux";
 import {loadManifest} from "../actions/contextActions";
-import FindPatient from "../components/FindPatient";
+import FindPatient from "../components/patient/FindPatient";
 
 import RGL, {WidthProvider} from "react-grid-layout";
 import '../../../node_modules/react-grid-layout/css/styles.css';
 import '../../../node_modules/react-resizable/css/styles.css';
-import ShowPatient from "../components/ShowPatient";
-import FindDrug from "../components/FindDrug";
-import ShowDrug from "../components/ShowDrug";
+import ShowPatient from "../components/patient/ShowPatient";
+import FindDrug from "../components/drug/FindDrug";
+import ShowDrug from "../components/drug/ShowDrug";
 import '../styles/grid.css';
 
 const ReactGridLayout = WidthProvider(RGL);

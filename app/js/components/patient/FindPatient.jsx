@@ -2,8 +2,8 @@ import React from 'react';
 import {autobind} from 'core-decorators';
 
 import {connect} from "react-redux"
-import {patientSearch} from "../actions/patientActions";
-import {PatientList} from "../components/PatientList"
+import {patientSearch} from "../../actions/patientActions";
+import {PatientList} from "./PatientList"
 
 @connect((store) => {
     return {
