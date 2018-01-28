@@ -17,10 +17,11 @@
     "babel-preset-stage-2": "^6.3.13",
     "core-decorators": "latest",
     "moment": "^2.17.1",
-    "react": "^15.4.1",
-    "react-dom": "^15.4.1",
+    "prop-types": "^15.6.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
     "react-grid-layout": "^0.16.2",
-    "react-redux": "^5.0.1",
+    "react-redux": "^5.0.6",
     "react-router": "^3.0.0",
     "redux": "^3.6.0",
     "redux-logger": "^3.0.6",
@@ -32,15 +33,19 @@
     "archiver": "^1.0.0",
     "babel-cli": "^6.18.0",
     "babel-core": "^6.2.1",
+    "babel-jest": "^22.1.0",
     "babel-loader": "^6.2.0",
-    "browser-sync": "^2.11.1",
+    "browser-sync": "^2.23.6",
     "browser-sync-webpack-plugin": "^1.0.1",
     "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.23.1",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.8.5",
     "html-loader": "^0.4.3",
     "html-webpack-plugin": "^2.24.1",
+    "jest": "^22.1.4",
     "on-build-webpack": "^0.1.0",
     "raw-loader": "^0.5.1",
     "rimraf": "^2.5.2",
@@ -49,6 +54,15 @@
     "webpack": "^1.12.13",
     "yargs": "^4.3.1"
   },
+  "jest": {
+    "transform": {
+      "^.+\\.jsx$": "babel-jest",
+      "^.+\\.js$": "babel-jest"
+    },
+    "moduleNameMapper": {
+      "\\.(css|scss)$": "<rootDir>/__mocks__/styleMock.js"
+    }
+  },
   "scripts": {
     "clean": "rimraf dist && rimraf coverage*",
     "build": "npm run clean && webpack --progress --colors --mode=production --target=web",
@@ -56,7 +70,7 @@
     "build:prod": "npm run test && npm run build",
     "build:deploy": "webpack --progress --colors --mode=deploy --target=web",
     "watch": "webpack --progress --colors --watch --mode=deploy --target=web",
-    "test": "echo \"Error: no test specified\""
+    "test": "jest"
   },
   "keywords": [
     "OpenMRS",

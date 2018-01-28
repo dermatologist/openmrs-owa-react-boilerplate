@@ -1,7 +1,5 @@
 import React from 'react';
-import moment from 'moment';
 import {connect} from "react-redux";
-import {autobind} from 'core-decorators';
 
 @connect((store) => {
     return {

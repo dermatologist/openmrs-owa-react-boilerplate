@@ -2,8 +2,8 @@ import React from 'react';
 import {autobind} from 'core-decorators';
 
 import {connect} from "react-redux"
-import {drugSearch} from "../actions/drugActions";
-import {DrugList} from "../components/DrugList"
+import {drugSearch} from "../../actions/drugActions";
+import {DrugList} from "./DrugList"
 
 @connect((store) => {
     return {
