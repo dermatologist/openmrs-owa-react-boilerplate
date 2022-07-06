@@ -16,7 +16,7 @@
     "babel-preset-react": "^6.3.13",
     "babel-preset-stage-2": "^6.3.13",
     "core-decorators": "latest",
-    "moment": "^2.17.1",
+    "moment": "^2.29.4",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
